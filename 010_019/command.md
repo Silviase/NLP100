@@ -24,3 +24,31 @@ sed -e 's/\t/ /g' popular-names.txt --in-place
 cat popular-names.txt | cut -d " " -f 1 > col1.txt
 cat popular-names.txt | cut -d " " -f 2 > col2.txt
 ```
+
+ここで"これはpythonでやったものをUNIXコマンドで確認するものである"ということに気付いてしまう. えー. とりあえずやる.
+
+## 13. マージ
+
+マージする.
+
+```bash
+paste col1.txt col2.txt --delimiters=" " > merged.txt
+```
+
+## 14. 先頭N行
+
+```bash
+cat popular-names.txt | head -N
+```
+
+## 15. 末尾N行
+
+```bash
+cat popular-names.txt | tail -N
+```
+
+## 16. N分割
+
+```bash
+split -n 3 popular-names.txt
+```
